@@ -9,9 +9,16 @@
         <div class="quote">
             <div class="quoteText"><%= quoteText %></div>
             <div class="quoteAuthor">By <%= quoteAuthor %></div>
-            <a class="quoteRefresh" href="#" onClick="window.location.reload()"
-                >New quote</a
-            >
         </div>
+        <script>
+            document.addEventListener('keyup', function (e) {
+                if (e.keyCode === 32) window.location.reload()
+            })
+
+            document.addEventListener('mouseup', (e) => {
+                if (e.button === 0) window.location.reload()
+            })
+        </script>
     </body>
 </html>
+<!-- onClick="window.location.reload()" -->
