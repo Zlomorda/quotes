@@ -1,11 +1,8 @@
-window.onload = function () {
-    document.querySelector('body').addEventListener('keyup', function (e) {
-        if (e.code === 'Space') window.location.reload()
-    })
-}
+const refreshOnSpace = document.querySelector('body')
+const touch = document.querySelector('.quoteText')
 
-window.onload = function () {
-    document.querySelector('body').addEventListener('mouseup', function (e) {
-        if (e.button === 0) window.location.reload()
-    })
-}
+refreshOnSpace.addEventListener('keyup', function (event) {
+    if (event.code === 'Space') window.location.reload()
+})
+
+touch.addEventListener('touchstart', () => window.location.reload())
