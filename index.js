@@ -2,7 +2,8 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const allQuotes = require('./static/quotes.json')
-const style = require('./static/style.css')
+
+app.use(express.static('static'))
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '/views'))

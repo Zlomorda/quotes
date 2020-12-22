@@ -1,26 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="./static/style.css" />
-    </head>
-    <body>
-        <h1>Test</h1>
+<%- include('./partials/head.ejs') %>
+<body>
+    <div class="container">
+        <%- include('./partials/navbar.ejs') %>
         <div class="quote">
             <div class="quoteText"><%= quoteText %></div>
             <div class="quoteAuthor">By <%= quoteAuthor %></div>
         </div>
-        <script>
-            document.addEventListener('keyup', function (e) {
-                if (e.keyCode === 32) window.location.reload()
-            })
+        <%- include('./partials/footer.ejs') %>
+    </div>
+</body>
 
-            document.addEventListener('mouseup', (e) => {
-                if (e.button === 0) window.location.reload()
-            })
-        </script>
-    </body>
-</html>
-<!-- onClick="window.location.reload()" -->
+<%- include('./partials/basement.ejs') %>
