@@ -1,5 +1,2 @@
-    <script>
-        document.addEventListener('keyup', function (e) {
-            if (e.keyCode === 32) window.location.reload()
-        })
-    </script>
+User-agent: *
+Allow: /
