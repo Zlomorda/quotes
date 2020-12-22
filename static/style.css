@@ -153,6 +153,8 @@ body {
 }
 .quoteText {
     margin: auto;
+    padding: 0 3% 0 3%;
+    text-align: center;
     font-size: x-large;
 }
 
