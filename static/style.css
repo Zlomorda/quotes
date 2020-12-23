@@ -132,7 +132,7 @@ body {
 }
 .container {
     display: grid;
-    grid-template-rows: 1fr 5fr 2fr;
+    grid-template-rows: 1fr 4fr 2fr;
     row-gap: 1vh;
     width: 100vw;
     height: 100vh;
@@ -151,6 +151,21 @@ body {
     min-height: 100%;
     min-width: 100%;
 }
+
+.prompt {
+    text-align: center;
+}
+
+.prompt::after {
+    content: 'Press SPACE bar for a new Quote';
+}
+
+@media (max-width: 1281px) {
+    .prompt::after {
+        content: 'Swipe for a new Quote';
+    }
+}
+
 .quoteText {
     margin: auto;
     padding: 0 3% 0 3%;
@@ -160,10 +175,12 @@ body {
 
 .quoteAuthor {
     margin: 0 auto 0 auto;
+    text-align: center;
     font-size: x-small;
 }
 
 .footer {
     margin: auto;
+    text-align: center;
     font-size: small;
 }
