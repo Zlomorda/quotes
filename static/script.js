@@ -1,4 +1,4 @@
-const refreshOnSpace = document.querySelector('body')
+const refreshOnSpace = document.querySelector('.container')
 refreshOnSpace.addEventListener('keyup', function (event) {
     if (event.code === 'Space') window.location.reload()
 })
