@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-const allQuotes = require('./static/quotes.json')
+const engQuotes = require('./static/eng_quotes.json')
 
 const app = express()
 
@@ -15,8 +15,8 @@ const PORT = process.env.PORT || 80
 app.get('/', (req, res) => {
     const randNum = Math.floor(Math.random() * (1643 - 1) + 1)
     try {
-        const quoteText = allQuotes[randNum].text
-        const quoteAuthor = allQuotes[randNum].author
+        const quoteText = engQuotes[randNum].text
+        const quoteAuthor = engQuotes[randNum].author
         res.render('home.ejs', { quoteText, quoteAuthor })
     } catch {
         const quoteText = 'Something went wrong. Please refresh the page.'
