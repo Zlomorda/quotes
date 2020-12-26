@@ -17,11 +17,11 @@ app.get('/', (req, res) => {
     try {
         const quoteText = engQuotes[randNum].text
         const quoteAuthor = engQuotes[randNum].author
-        res.render('home.ejs', { quoteText, quoteAuthor })
+        res.render('home.ejs', { quoteText, quoteAuthor, randNum })
     } catch {
         const quoteText = 'Something went wrong. Please refresh the page.'
         const quoteAuthor = 'Developer'
-        res.render('home.ejs', { quoteText, quoteAuthor })
+        res.render('home.ejs', { quoteText, quoteAuthor, randNum })
     }
 })
 
