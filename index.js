@@ -25,6 +25,19 @@ app.get('/', (req, res) => {
     }
 })
 
+app.get('/en/id=:quoteid', (req, res) => {
+    const { quoteid } = req.params
+    try {
+        const quoteText = engQuotes[quoteid].text
+        const quoteAuthor = engQuotes[quoteid].author
+        res.render('quotebyid.ejs', { quoteText, quoteAuthor })
+    } catch {
+        const quoteText = 'Something went wrong. Please refresh the page.'
+        const quoteAuthor = 'Developer'
+        res.render('quotebyid.ejs', { quoteText, quoteAuthor })
+    }
+})
+
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
 })
