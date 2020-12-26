@@ -1,0 +1,21 @@
+<%- include('./partials/head.ejs') %>
+<body>
+    <div class="container">
+        <%- include('./partials/navbar.ejs') %>
+        <div class="quote">
+            <div class="quoteText"><%= quoteText %></div>
+            <div class="quoteAuthor">
+                By
+                <a
+                    href="https://en.wikipedia.org/wiki/<%= quoteAuthor %>"
+                    target="_blank"
+                    ><%= quoteAuthor %></a
+                >
+            </div>
+        </div>
+        <div class="shareQuote"><%- include('./partials/share.ejs') %></div>
+        <%- include('./partials/footer.ejs') %>
+    </div>
+</body>
+
+<%- include('./partials/basement.ejs') %>
