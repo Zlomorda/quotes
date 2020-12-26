@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const engQuotes = require('./static/eng_quotes.json')
+const ruQuotes = require('./static/rus_quotes.json')
 
 const app = express()
 
@@ -25,16 +26,37 @@ app.get('/', (req, res) => {
     }
 })
 
+app.get('/ru/', (req, res) => {
+    const randNum = Math.floor(Math.random() * (999 - 1) + 1)
+    try {
+        const quoteText = ruQuotes[randNum].text
+        const quoteAuthor = ruQuotes[randNum].author
+        res.render('ru_quote.ejs', { quoteText, quoteAuthor, randNum })
+    } catch {
+        const quoteText = 'Something went wrong. Please refresh the page.'
+        const quoteAuthor = 'Developer'
+        res.render('ru_quote.ejs', { quoteText, quoteAuthor, randNum })
+    }
+})
+
 app.get('/en/id=:quoteid', (req, res) => {
     const { quoteid } = req.params
     try {
         const quoteText = engQuotes[quoteid].text
         const quoteAuthor = engQuotes[quoteid].author
-        res.render('quotebyid.ejs', { quoteText, quoteAuthor, randNum: quoteid })
+        res.render('quotebyid.ejs', {
+            quoteText,
+            quoteAuthor,
+            randNum: quoteid,
+        })
     } catch {
         const quoteText = 'Something went wrong. Please refresh the page.'
         const quoteAuthor = 'Developer'
-        res.render('quotebyid.ejs', { quoteText, quoteAuthor, randNum: quoteid })
+        res.render('quotebyid.ejs', {
+            quoteText,
+            quoteAuthor,
+            randNum: quoteid,
+        })
     }
 })
 
