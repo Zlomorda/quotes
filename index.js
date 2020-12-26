@@ -30,11 +30,11 @@ app.get('/en/id=:quoteid', (req, res) => {
     try {
         const quoteText = engQuotes[quoteid].text
         const quoteAuthor = engQuotes[quoteid].author
-        res.render('quotebyid.ejs', { quoteText, quoteAuthor, randNum })
+        res.render('quotebyid.ejs', { quoteText, quoteAuthor, randNum: quoteid })
     } catch {
         const quoteText = 'Something went wrong. Please refresh the page.'
         const quoteAuthor = 'Developer'
-        res.render('quotebyid.ejs', { quoteText, quoteAuthor, randNum })
+        res.render('quotebyid.ejs', { quoteText, quoteAuthor, randNum: quoteid })
     }
 })
 
