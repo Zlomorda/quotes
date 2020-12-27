@@ -50,8 +50,8 @@ app.get('/en/id=:quoteid', (req, res) => {
             randNum: quoteid,
         })
     } catch {
-        const quoteText = 'Something went wrong. Please refresh the page.'
-        const quoteAuthor = 'Developer'
+        const quoteText = 'Всё сломалось!! Перезагрузи страницу.'
+        const quoteAuthor = 'Зломорда'
         res.render('quotebyid.ejs', {
             quoteText,
             quoteAuthor,
