@@ -37,7 +37,7 @@ app.get('/ru/', (req, res) => {
         const quoteAuthor = ruQuotes[randNum].author
         res.render('ru_quote.ejs', { quoteText, quoteAuthor, randNum })
     } catch {
-        const quoteText = 'Something went wrong. Please refresh the page.'
+        const quoteText = 'Something went wrong. Please refresh the page. '
         const quoteAuthor = 'Developer'
         res.render('ru_quote.ejs', { quoteText, quoteAuthor, randNum })
     }
