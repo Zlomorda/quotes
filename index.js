@@ -26,6 +26,19 @@ app.get('/', (req, res) => {
     }
 })
 
+app.get('/en/', (req, res) => {
+    const randNum = Math.floor(Math.random() * (999 - 1) + 1)
+    try {
+        const quoteText = ruQuotes[randNum].text
+        const quoteAuthor = ruQuotes[randNum].author
+        res.render('en_quote.ejs', { quoteText, quoteAuthor, randNum })
+    } catch {
+        const quoteText = 'Something went wrong. Please refresh the page.'
+        const quoteAuthor = 'Developer'
+        res.render('en_quote.ejs', { quoteText, quoteAuthor, randNum })
+    }
+})
+
 app.get('/ru/', (req, res) => {
     const randNum = Math.floor(Math.random() * (999 - 1) + 1)
     try {
