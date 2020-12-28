@@ -123,6 +123,12 @@ q:after {
     content: '';
     content: none;
 }
+a {
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+}
 table {
     border-collapse: collapse;
     border-spacing: 0;
