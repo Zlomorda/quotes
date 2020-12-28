@@ -14,23 +14,14 @@ app.set('static', path.join(__dirname, '/static'))
 const PORT = process.env.PORT || 80
 
 app.get('/', (req, res) => {
-    const randNum = Math.floor(Math.random() * (1643 - 1) + 1)
-    try {
-        const quoteText = engQuotes[randNum].text
-        const quoteAuthor = engQuotes[randNum].author
-        res.render('home.ejs', { quoteText, quoteAuthor, randNum })
-    } catch {
-        const quoteText = 'Something went wrong. Please refresh the page.'
-        const quoteAuthor = 'Developer'
-        res.render('home.ejs', { quoteText, quoteAuthor, randNum })
-    }
-})
+    res.render('home.ejs')
+}
 
 app.get('/en/', (req, res) => {
     const randNum = Math.floor(Math.random() * (999 - 1) + 1)
     try {
-        const quoteText = ruQuotes[randNum].text
-        const quoteAuthor = ruQuotes[randNum].author
+        const quoteText = engQuotes[randNum].text
+        const quoteAuthor = engQuotes[randNum].author
         res.render('en_quote.ejs', { quoteText, quoteAuthor, randNum })
     } catch {
         const quoteText = 'Something went wrong. Please refresh the page.'
