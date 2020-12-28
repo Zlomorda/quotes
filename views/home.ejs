@@ -3,15 +3,8 @@
     <div class="container">
         <%- include('./partials/navbar.ejs') %>
         <div class="quote">
-            <div class="prompt"></div>
-            <div class="quoteText"><%= quoteText %></div>
-            <div class="quoteAuthor">
-                By
-                <a
-                    href="https://en.wikipedia.org/wiki/<%= quoteAuthor %>"
-                    target="_blank"
-                    ><%= quoteAuthor %></a
-                >
+            <div class="quoteText">
+                <a href="/en">Quotes</a> or / или <a href="/ru">Цитаты</a>
             </div>
         </div>
         <div class="shareQuote"><%- include('./partials/share.ejs') %></div>
